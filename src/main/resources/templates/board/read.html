@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div class="container" style="max-width: 1000px">
+  <div class="py-5 text-center">
+    <h2>[[${board.boardName}]]</h2>
+  </div>
+
+<button class="btn btn-primary float-end"><a href="/article/boardId/article">글 등록</a></button>
+
+<div th:if="${board.writtenArticles.isEmpty()}">
+  <p>No Articles Here...</p>
+</div>
+<div th:unless="${board.writtenArticles.isEmpty()}">
+  <p th:each="article: ${board.writtenArticles}">
+    [[${article.id}]]. [[$article.title]]
+  </p>
+</div>
+</body>
+</html>

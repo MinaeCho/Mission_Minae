@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <style>
+      .container {
+          max-width: 560px;
+      }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="py-5 text-center">
+    <h2>글 상세보기</h2>
+  </div>
+  <div class="mb-3">
+    <label for="title" class="form-label">글 제목</label>
+    <input type="text" class="form-control" id="title" name="title" th:value="${article.title}" readonly>
+  </div>
+<!--  <div class="mb-3">-->
+<!--    <p>글 내용</p>-->
+<!--    <p>[[${article.content}]]</p>-->
+<!--  </div>-->
+  <div class="mb-3">
+    <div class="form-group">
+      <label>글 내용</label>
+      <textarea class="form-control" rows="10" name="content" readonly >[[${article.content}]]</textarea>
+    </div>
+  </div>
+  <div style="margin-top : 20px">
+    <a th:href="@{/article/{id}/update-view(id=${article.id})}">수정</a>
+    <a href="/article">목록</a>
+    <form th:action="@{/article/{id}/delete(id=${article.id})}" method="post">
+      <input button class="btn btn-sm btn btn-secondary" type="submit" value="삭제">
+    </form>
+  </div>
+
+<!--댓글 시작-->
+  <hr>
+  <div class="mb-3">
+    <label for="content-area" class="form-label">댓글 내용 </label>
+    <textarea id="content-area" rows="5" class="form-control" name="content" placeholder="내용을 입력하세요."></textarea>
+  </div>
+  <hr>
+<div th:if="${article.writtenComments.isEmpty()}"><h3>No Comments</h3></div>
+  <div th:unless="${article.writtenComments.isEmpty()}" th:each="comment: ${article.writtenComments}">
+
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</div>
+</body>
+</html>
