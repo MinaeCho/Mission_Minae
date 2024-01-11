@@ -1,8 +1,11 @@
-package com.example.boardproject;
+package com.example.boardproject.service;
 
 import com.example.boardproject.entity.Article;
+import com.example.boardproject.entity.Board;
+import com.example.boardproject.entity.Comment;
 import com.example.boardproject.repo.ArticleRepository;
 import com.example.boardproject.repo.BoardRepository;
+import com.example.boardproject.repo.CommentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +23,7 @@ public class ArticleService {
             String content,
             String password,
             Long boardId
-    ){
+    ) {
         Article article = new Article();
         article.setTitle(title);
         article.setContent(content);
@@ -34,8 +37,9 @@ public class ArticleService {
         return optionalArticle.orElse(null);
     }
 
-    public List<Article> readArticleAll()
-    {return articleRepository.findAll();}
+    public List<Article> readArticleAll() {
+        return articleRepository.findAll();
+    }
 
 
     public void update(
@@ -52,7 +56,8 @@ public class ArticleService {
         articleRepository.save(target);
     }
 
-    public void delete(Long id) {articleRepository.deleteById(id);}
-
+    public void delete(Long id) {
+        articleRepository.deleteById(id);
+    }
 }
 

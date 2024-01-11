@@ -1,5 +1,7 @@
-package com.example.boardproject;
+package com.example.boardproject.controller;
 
+import com.example.boardproject.service.ArticleService;
+import com.example.boardproject.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

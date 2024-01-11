@@ -16,5 +16,5 @@ public class Board {
     private String boardName;
 
     @OneToMany(mappedBy = "board")
-    private List<Article> writtenArticles;
+    private List<Article> writtenArticles = new ArrayList<>();
 }

@@ -1,5 +1,7 @@
-package com.example.boardproject;
+package com.example.boardproject.controller;
 
+import com.example.boardproject.service.ArticleService;
+import com.example.boardproject.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,12 +13,6 @@ import org.springframework.web.bind.annotation.*;
 public class ArticleController {
     private final ArticleService articleService;
     private final BoardService boardService;
-
-//    @GetMapping("view")
-//    public String view(Model model) {
-//        model.addAttribute("articles", articleService.readArticleAll());
-//        return "article/list1";
-//    }
 
     @GetMapping("/boardId/article")
     public String writeView(Model model){

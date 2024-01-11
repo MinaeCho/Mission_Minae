@@ -1,5 +1,7 @@
-package com.example.boardproject;
+package com.example.boardproject.controller;
 
+import com.example.boardproject.service.ArticleService;
+import com.example.boardproject.service.CommentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,8 +22,15 @@ public class CommentController {
             Long articleId,
             @RequestParam("content")
             String content
+
     ) {
-        commentService.create(articleId, content);
+        commentService.create(content, articleId);
         return String.format("redirect:/article/%d", articleId);
+    }
+    @PostMapping("{id}/delete")
+    public String delete(@PathVariable("id") Long id) {
+        commentService.delete(id);
+        return "redirect:/article";
+
     }
 }
