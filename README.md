@@ -19,9 +19,9 @@ Database: SQLite
 ORM: JPA
 
 ## 필수 요구사항
-# 1. 게시판 기능
-# 2. 게시글 기능
-# 3. 댓글 기능
+1. 게시판 기능
+2. 게시글 기능
+3. 댓글 기능
 
 ## 테이블 설계
 <img width="902" alt="Screenshot 2024-01-11 at 2 42 15 PM" src="https://github.com/MinaeCho/Mission_Minae/assets/151011576/77ae4669-4734-4aa3-a7f3-ec51dd2730a4">
