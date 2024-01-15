@@ -18,6 +18,5 @@ public class Comment {
 
 
     @ManyToOne
-//
     private Article article;
 }
