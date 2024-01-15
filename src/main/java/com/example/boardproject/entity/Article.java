@@ -21,6 +21,6 @@ public class Article {
     private Board board;
 
     @OneToMany(mappedBy = "article")
-//    @OrderBy("id desc")
+    @OrderBy("id desc")
     private List<Comment> comments = new ArrayList<>();
 }

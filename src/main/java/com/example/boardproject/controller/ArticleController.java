@@ -37,7 +37,7 @@ public class ArticleController {
     @GetMapping
     public String readAll(Model model){
         model.addAttribute("articles", articleService.readArticleAll());
-        return "article/list1";
+        return "article/list";
     }
 
     @GetMapping("{id}")

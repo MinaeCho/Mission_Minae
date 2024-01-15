@@ -18,5 +18,6 @@ public class Comment {
 
 
     @ManyToOne
+    @OrderBy("id desc")
     private Article article;
 }

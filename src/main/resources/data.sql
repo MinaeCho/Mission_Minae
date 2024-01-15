@@ -1,6 +1,5 @@
 INSERT INTO board (board_name)
 VALUES
-    ('전체 게시판'),
     ('자유 게시판'),
     ('개발 게시판'),
     ('일상 게시판'),

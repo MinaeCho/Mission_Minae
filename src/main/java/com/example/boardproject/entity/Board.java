@@ -16,5 +16,6 @@ public class Board {
     private String boardName;
 
     @OneToMany(mappedBy = "board")
+    @OrderBy("id desc")
     private List<Article> writtenArticles = new ArrayList<>();
 }
